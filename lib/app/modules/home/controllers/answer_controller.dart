@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:module_app/app/modules/home/views/all_level/level1.dart';
+import 'package:module_app/app/modules/home/views/loading_all.dart';
 import 'package:module_app/app/modules/home/views/main_menu.dart';
 import 'package:module_app/app/modules/home/views/select_level.dart';
 import 'package:module_app/app/routes/app_pages.dart';
@@ -65,7 +66,9 @@ class answer_controller extends GetxController {
                         borderRadius: BorderRadius.circular(20)),
                     child: TextButton(
                         onPressed: () {
-                          Get.offAll(SelectLevel());
+                          // Get.offAll(SelectLevel());
+                          // Get.toNamed(AppPages.loadingAll)
+                          Get.offAll(LoadingAll());
                         },
                         child: Icon(
                           Icons.menu,
@@ -187,13 +190,14 @@ class answer_controller extends GetxController {
         ));
   }
 
-  void levellocked(){
+  void levellocked() {
     Get.snackbar('Unaccessable :', 'This Level is currently locked',
-          backgroundColor: Colors.amber[50]);
+        backgroundColor: Colors.amber[50]);
   }
 
-  void comingsoon(){
-    Get.snackbar('Unaccessable :', 'This Level will available in the next update, stay tune :D',
-          backgroundColor: Colors.amber[50]);
+  void comingsoon() {
+    Get.snackbar('Unaccessable :',
+        'This Level will available in the next update, stay tune :D',
+        backgroundColor: Colors.amber[50]);
   }
 }

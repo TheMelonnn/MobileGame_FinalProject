@@ -17,6 +17,7 @@ class SelectLevel extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     var currentlevel = RxInt(_databasecontroller.leveldata[0].data['currentlevel']);
+    // print(object)
     return Scaffold(
       backgroundColor: Color(0XFF9DCD5A),
       body: Center(

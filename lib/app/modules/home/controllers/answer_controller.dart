@@ -157,7 +157,7 @@ class answer_controller extends GetxController {
                         borderRadius: BorderRadius.circular(20)),
                     child: TextButton(
                         onPressed: () {
-                          Get.offAll(SelectLevel());
+                          Get.toNamed(AppPages.selectlevel);
                         },
                         child: Icon(
                           Icons.menu,

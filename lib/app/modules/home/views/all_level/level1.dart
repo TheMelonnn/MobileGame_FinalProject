@@ -131,10 +131,11 @@ class Level1 extends GetView<answer_controller> {
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
-                  _databasecontroller.updateDocument(_databasecontroller.leveldata[0].$id, {
-                    'currentlevel': 2,
-                     'detail': 0
-                  });
+                  if (_databasecontroller.leveldata[0].data['currentlevel'] < 2) {
+                    _databasecontroller.updateDocument(
+                        _databasecontroller.leveldata[0].$id,
+                        {'currentlevel': 2, 'detail': 0});
+                  }
                   _answerController.correct_answer();
                 },
                 child: Text(

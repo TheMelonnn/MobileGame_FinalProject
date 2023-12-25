@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:module_app/app/modules/home/controllers/answer_controller.dart';
+import 'package:module_app/app/modules/home/controllers/database_controller.dart';
 import 'package:module_app/app/routes/app_pages.dart';
 
 class Level5 extends GetView<answer_controller> {
   // const Level1({Key? key}) : super(key: key);
+  final DatabaseController _databasecontroller = Get.put(DatabaseController());
   final answer_controller _answerController = Get.put(answer_controller());
 
   @override
@@ -129,6 +131,11 @@ class Level5 extends GetView<answer_controller> {
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
+                  if (_databasecontroller.leveldata[0].data['currentlevel'] < 6) {
+                    _databasecontroller.updateDocument(
+                        _databasecontroller.leveldata[0].$id,
+                        {'currentlevel': 6, 'detail': 0});
+                  }
                   _answerController.correct_answer();
                 },
                 child: Text(

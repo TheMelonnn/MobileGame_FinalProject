@@ -37,7 +37,7 @@ class Mainmenu extends GetView<HomeController> {
                   borderRadius: BorderRadius.circular(60)),
               child: TextButton(
                 onPressed: () {
-                  Get.toNamed(AppPages.selectlevel);
+                  Get.toNamed(AppPages.loadingView);
                 },
                 child: Text(
                   "Start",

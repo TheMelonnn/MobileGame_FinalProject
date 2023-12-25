@@ -12,7 +12,7 @@ class LoadingAllController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    Future.delayed(const Duration(microseconds: 1000000), () {
+    Future.delayed(const Duration(microseconds: 10), () {
       Get.toNamed(AppPages.loadingView);
     });
   }

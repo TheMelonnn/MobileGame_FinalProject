@@ -4,8 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:module_app/app/modules/home/controllers/answer_controller.dart';
 import 'package:module_app/app/routes/app_pages.dart';
 
+import '../../controllers/database_controller.dart';
+
 class Level2 extends GetView<answer_controller> {
   // const Level1({Key? key}) : super(key: key);
+  final DatabaseController _databasecontroller = Get.put(DatabaseController());
   final answer_controller _answerController = Get.put(answer_controller());
 
   @override
@@ -129,6 +132,10 @@ class Level2 extends GetView<answer_controller> {
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
+                  _databasecontroller.updateDocument(_databasecontroller.leveldata[0].$id, {
+                    'currentlevel': 3,
+                     'detail': 0
+                  });
                   _answerController.correct_answer();
                 },
                 child: Text(

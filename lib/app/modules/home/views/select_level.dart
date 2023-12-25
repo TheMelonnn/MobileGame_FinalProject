@@ -4,14 +4,19 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:module_app/app/modules/home/views/main_menu.dart';
 import 'package:module_app/app/routes/app_pages.dart';
 import '../controllers/answer_controller.dart';
+import '../controllers/database_controller.dart';
 import '../controllers/home_controller.dart';
 
 class SelectLevel extends GetView<HomeController> {
   // const SelectLevel({Key? key}) : super(key: key);
-  final RxInt currentlevel = 1.obs;
   final answer_controller _answerController = Get.put(answer_controller());
+  final DatabaseController _databasecontroller = Get.put(DatabaseController());
+
+  SelectLevel({super.key});
+
   @override
   Widget build(BuildContext context) {
+    var currentlevel = RxInt(_databasecontroller.leveldata[0].data['currentlevel']);
     return Scaffold(
       backgroundColor: Color(0XFF9DCD5A),
       body: Center(
@@ -395,7 +400,7 @@ class SelectLevel extends GetView<HomeController> {
             ),
             GestureDetector(
               onTap: () {
-                Get.offAll(Mainmenu());
+                Get.toNamed(AppPages.mainmenu);
               },
               child: Container(
                 height: 80,

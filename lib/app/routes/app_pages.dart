@@ -34,7 +34,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.MENU,
-      page: () => const Mainmenu(),
+      page: () => Mainmenu(),
     ),
     GetPage(
       name: _Paths.LEVEL,

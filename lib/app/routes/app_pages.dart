@@ -10,6 +10,7 @@ import 'package:module_app/app/modules/home/views/loading_view.dart';
 import 'package:module_app/app/modules/home/views/main_menu.dart';
 import 'package:module_app/app/modules/home/views/select_level.dart';
 import 'package:module_app/app/modules/home/views/settings_view.dart';
+import 'package:module_app/app/modules/home/views/splash_view.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
@@ -28,6 +29,7 @@ class AppPages {
   static const level4 = Routes.LEVEL4;
   static const level5 = Routes.LEVEL5;
   static const level6 = Routes.LEVEL6;
+  static const splashView = Routes.SplashView;
   static const loadingAll = Routes.LoadingAll;
   static const loadingView = Routes.LoadingView;
   static const settingsView = Routes.SettingsView;
@@ -81,6 +83,10 @@ class AppPages {
     GetPage(
       name: _Paths.SettingsView,
       page: () => SettingsView(),
+    ),
+    GetPage(
+      name: _Paths.SplashView,
+      page: () => SplashView(),
     ),
   ];
 }

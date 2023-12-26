@@ -14,6 +14,7 @@ abstract class Routes {
   static const LEVEL6 = _Paths.LEVEL6;
   static const LoadingAll = _Paths.LoadingAll;
   static const LoadingView = _Paths.LoadingView;
+  static const SettingsView = _Paths.SettingsView;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const LEVEL6 = '/level6';
   static const LoadingAll = '/loading_all';
   static const LoadingView = '/loading_view';
+  static const SettingsView = '/settings';
 }

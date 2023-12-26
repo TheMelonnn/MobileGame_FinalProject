@@ -55,7 +55,7 @@ class Mainmenu extends GetView<HomeController> {
                   color: Colors.pink, borderRadius: BorderRadius.circular(60)),
               child: TextButton(
                 onPressed: () {
-                  print('test');
+                  Get.toNamed(AppPages.settingsView);
                 },
                 child: Text(
                   "Settings",

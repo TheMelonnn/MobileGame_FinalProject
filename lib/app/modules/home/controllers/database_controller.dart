@@ -22,7 +22,7 @@ class DatabaseController extends ClientController {
     listDocument();
   }
 
-  Future<void> createDocument(Map<Int, String> map) async {
+  Future<void> createDocument(Map<String, int> map) async {
     try {
       final result = await databases.createDocument(
         databaseId: "6589652893d9448f20db",

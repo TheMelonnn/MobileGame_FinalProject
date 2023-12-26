@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../controllers/database_controller.dart';
@@ -7,9 +8,9 @@ import 'package:module_app/app/routes/app_pages.dart';
 
 class Mainmenu extends GetView<HomeController> {
   final DatabaseController _databasecontroller = Get.put(DatabaseController());
-  
+
   // const Mainmenu({Key? key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +75,7 @@ class Mainmenu extends GetView<HomeController> {
                   borderRadius: BorderRadius.circular(60)),
               child: TextButton(
                 onPressed: () {
-                  
+                  exit();
                 },
                 child: Text(
                   "Exit",
@@ -86,5 +87,9 @@ class Mainmenu extends GetView<HomeController> {
         ),
       ),
     );
+  }
+
+  void exit() {
+    SystemNavigator.pop();
   }
 }

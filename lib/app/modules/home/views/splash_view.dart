@@ -19,6 +19,10 @@ class SplashView extends GetView<HomeController> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // ignore: avoid_unnecessary_containers
+            Text(
+              "Quiz VOC",
+              style: GoogleFonts.roboto(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),
+            ),
             Container(
               child: const Image(
                 image: AssetImage("assets/images/main_character.png"),
@@ -26,6 +30,18 @@ class SplashView extends GetView<HomeController> {
                 height: 300,
               ),
             ),
+            SizedBox(
+              height: 30,
+            ),
+            Text(
+                "by",
+                style: GoogleFonts.roboto(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
             Container(
               child: Text(
                 "Chipi Chipi Chapa Chapa Dubi Dubi Daba Daba",

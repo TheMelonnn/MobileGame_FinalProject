@@ -16,12 +16,17 @@ class Mainmenu extends GetView<HomeController> {
     return Scaffold(
       backgroundColor: Color(0XFF9DCD5A),
       body: Center(
+          child: Container(
+            width: 720,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/bg.png"), fit: BoxFit.cover)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               "Quiz VOC",
-              style: GoogleFonts.roboto(color: Colors.white, fontSize: 60),
+              style: GoogleFonts.roboto(color: Colors.white, fontSize: 60, fontWeight: FontWeight.bold),
             ),
             Text(
               "Menambah Wawasan dan Pengetahuan",
@@ -85,7 +90,7 @@ class Mainmenu extends GetView<HomeController> {
             ),
           ],
         ),
-      ),
+      )),
     );
   }
 

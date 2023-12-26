@@ -41,7 +41,7 @@ class SettingsView extends GetView<HomeController> {
                 height: 60,
               ),
               Container(
-                  width: 312,
+                  width: 337,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [

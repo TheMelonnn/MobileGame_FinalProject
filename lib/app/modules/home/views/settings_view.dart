@@ -28,7 +28,10 @@ class SettingsView extends GetView<HomeController> {
               Container(
                 child: Text(
                   "Settings",
-                  style: GoogleFonts.roboto(color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.roboto(
+                      color: Colors.white,
+                      fontSize: 50,
+                      fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -36,39 +39,77 @@ class SettingsView extends GetView<HomeController> {
                 height: 60,
               ),
               Container(
-                height: 50,
-                width: 400,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                          color: Colors.red[400],
-                          border: Border.all(width: 0.5),
-                          borderRadius: BorderRadius.circular(20)),
-                      child: TextButton(
-                          onPressed: () {
-                            _settingsController.confirmation();
-                          },
-                          child: Icon(
-                            Icons.replay_outlined,
-                            color: Colors.white,
-                          )),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      "Reset Progress",
-                      style:
-                          GoogleFonts.roboto(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
-              ),
+                  width: 400,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                                color: Colors.red[400],
+                                border: Border.all(width: 0.5),
+                                borderRadius: BorderRadius.circular(20)),
+                            child: TextButton(
+                                onPressed: () {
+                                  _settingsController.confirmation();
+                                },
+                                child: Icon(
+                                  Icons.replay_outlined,
+                                  color: Colors.white,
+                                )),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "Reset Progress",
+                            style: GoogleFonts.roboto(
+                                color: Colors.white,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                      const Padding(padding: EdgeInsets.all(10)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                                color: Colors.green,
+                                border: Border.all(width: 0.5),
+                                borderRadius: BorderRadius.circular(20)),
+                            child: TextButton(
+                                onPressed: () {
+                                  _settingsController.playMusic();
+                                },
+                                child: Icon(
+                                  Icons.music_note,
+                                  color: Colors.white,
+                                )),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "Background Music",
+                            style: GoogleFonts.roboto(
+                                color: Colors.white,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ],
+                  )),
               SizedBox(
                 height: 150,
               )

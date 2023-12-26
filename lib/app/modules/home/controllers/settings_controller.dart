@@ -1,3 +1,4 @@
+import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -5,9 +6,22 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:module_app/app/modules/home/controllers/database_controller.dart';
 import 'package:module_app/app/modules/home/views/loading_all.dart';
 import 'package:module_app/app/modules/home/views/main_menu.dart';
+import 'package:audioplayers/audioplayers.dart';
 
-class SettingsController extends GetxController{
+class SettingsController extends GetxController {
   final DatabaseController _databasecontroller = Get.put(DatabaseController());
+  bool musicOn = false;
+  AudioPlayer audioPlayer = AudioPlayer();
+
+  void playMusic() {
+    if (musicOn) {
+      audioPlayer.stop();
+      musicOn = false;
+    }
+    audioPlayer.play(UrlSource(
+        'https://filesamples.com/samples/audio/mp3/Symphony%20No.6%20(1st%20movement).mp3'));
+    musicOn = true;
+  }
 
   void confirmation() {
     Get.defaultDialog(
@@ -38,7 +52,6 @@ class SettingsController extends GetxController{
             ),
             Container(
                 width: 40,
-
                 child: Row(
                   children: [
                     Icon(
@@ -64,12 +77,11 @@ class SettingsController extends GetxController{
                         borderRadius: BorderRadius.circular(20)),
                     child: TextButton(
                         onPressed: () async {
-                          final document_id = _databasecontroller.leveldata[0].$id;
+                          final document_id =
+                              _databasecontroller.leveldata[0].$id;
                           await _databasecontroller.deleteDocument(document_id);
-                          await _databasecontroller.createDocument({
-                            'currentlevel' : 1,
-                            'detail' : 0
-                          });
+                          await _databasecontroller
+                              .createDocument({'currentlevel': 1, 'detail': 0});
 
                           await Get.offAll(Mainmenu());
                         },

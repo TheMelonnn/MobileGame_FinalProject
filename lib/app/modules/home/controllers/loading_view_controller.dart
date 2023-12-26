@@ -12,7 +12,7 @@ class LoadingViewController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    Future.delayed(const Duration(microseconds: 2000000), () {
+    Future.delayed(const Duration(microseconds: 2500000), () {
       Get.toNamed(AppPages.selectlevel);
     });
   }

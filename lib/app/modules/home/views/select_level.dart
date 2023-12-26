@@ -401,7 +401,7 @@ class SelectLevel extends GetView<HomeController> {
             ),
             GestureDetector(
               onTap: () {
-                Get.toNamed(AppPages.mainmenu);
+                Get.offAll(Mainmenu());
               },
               child: Container(
                 height: 80,

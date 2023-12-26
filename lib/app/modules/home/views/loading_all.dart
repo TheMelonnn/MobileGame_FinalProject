@@ -13,8 +13,16 @@ class LoadingAll extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 0, 0),
-      body: Center(),
+      backgroundColor: Color(0XFF9DCD5A),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [Text(
+              "Loading",
+              style: GoogleFonts.roboto(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),
+            ),],
+        ),
+      ),
     );
   }
 }

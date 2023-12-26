@@ -7,6 +7,8 @@ import '../controllers/database_controller.dart';
 import '../controllers/home_controller.dart';
 import 'package:module_app/app/routes/app_pages.dart';
 
+import 'main_menu.dart';
+
 class SettingsView extends GetView<HomeController> {
   final DatabaseController _databasecontroller = Get.put(DatabaseController());
   final SettingsController _settingsController = Get.put(SettingsController());
@@ -39,12 +41,12 @@ class SettingsView extends GetView<HomeController> {
                 height: 60,
               ),
               Container(
-                  width: 400,
+                  width: 312,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
                             width: 50,
@@ -62,9 +64,6 @@ class SettingsView extends GetView<HomeController> {
                                   color: Colors.white,
                                 )),
                           ),
-                          SizedBox(
-                            width: 10,
-                          ),
                           Text(
                             "Reset Progress",
                             style: GoogleFonts.roboto(
@@ -73,11 +72,14 @@ class SettingsView extends GetView<HomeController> {
                                 fontWeight: FontWeight.bold),
                             textAlign: TextAlign.center,
                           ),
+                          SizedBox(
+                            width: 30,
+                          )
                         ],
                       ),
                       const Padding(padding: EdgeInsets.all(10)),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
                             width: 50,
@@ -108,11 +110,29 @@ class SettingsView extends GetView<HomeController> {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 150,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Get.offAll(Mainmenu());
+                        },
+                        child: Container(
+                          height: 80,
+                          width: 80,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(60),
+                            border: Border.all(width: 3),
+                          ),
+                          child: Icon(Icons.home, size: 50),
+                        ),
+                      ),
                     ],
                   )),
-              SizedBox(
-                height: 150,
-              )
+              // SizedBox(
+              //   height: 150,
+              // )
             ],
           ),
         ));
